@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>作业c分页面1:信息登记</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        /*导航条*/
+        .wrap {
+            width: 260px;
+            height: 100%;
+            background-color: #363a45;
+            display: inline-block;
+        }
+        .header {
+            width: 100%;
+            height: 65px;
+            background-color: #44495a;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            line-height: 65px;
+        }
+        .nav {
+            width: 250px;
+            margin: 10px 5px 0;
+        }
+        .list {
+            margin-bottom: 5px;
+        }
+        .list h2 {
+            position: relative;
+            padding: 15px 0;
+            background-color: #3889d4;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            transition: 0.5s;
+        }
+        .list h2.on {
+            background-color: #393c4a;
+        }
+        .list i {
+            position: absolute;
+            right: 10px;
+            top: 16px;
+            border: 8px solid transparent;
+            border-left-color: #fff;
+            transform: rotate(0deg);
+            transform-origin: 1px 8px;
+            transition: 0.5s;
+        }
+        .list i.on{
+            transform: rotate(90deg);
+        }
+        .hide {
+            overflow: hidden;
+            height: 0;
+            transition: 0.5s;
+        }
+        .hide h5 {
+            padding: 10px 0;
+            background-color: #282c3a;
+            text-align: center;
+            color: #fff;
+            border-bottom: #42495d;
+        }
+
+        /*表单*/
+        .fm{
+            display: inline-block;
+            height: 80%;
+            background-color: #3889d4;
+            width: 600px;
+            position: absolute;
+            left: 700px;
+            top: 80px;
+        }
+        .fm h1{
+            color: #ff0000;
+            font-size: 50px;
+            padding: 30px 0;
+            display: block;
+            text-align: center;
+            background-color: #393c4a;
+        }
+        .fm form{
+            text-align: center;
+        }
+        .fm form p{
+            height: 45px;
+            padding-top: 60px;
+            display: block;
+            position: relative;
+        }
+        .fm form p:last-of-type{
+            padding-top: 130px;
+        }
+        .fm form p b{
+            font-size: 25px;
+            line-height: 25px;
+            width: 120px;
+            display: inline-block;
+            color: #984806;
+        }
+        .fm form p input{
+            width: 300px;
+            height: 35px;
+            border: 2px solid #000;
+            position: relative;
+            top: -3px;
+        }
+        .fm form p:last-of-type input{
+            border-radius: 10px;
+            font-size: 20px;
+            background-color: aqua;
+            font-weight: bold;
+        }
+        .fm a{
+            text-decoration: none;
+            color: red;
+            font-size: 20px;
+            position: absolute;
+            right: 16px;
+            bottom: 10px;
+            font-weight: bold;
+        }
+        .fm a:hover{
+            color: deeppink;
+            transform: scale(1.2);
+        }
+    </style>
+    <script language="JavaScript" type="text/javascript">
+        // 信息提交
+        function display() {
+            DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200');
+            message = "<ul><li><b>姓名: </b>" + document.form.yourname.value + "</li>";
+            message += "<li><b>密码: </b>" + document.form.yourpassword.value + "</li>";
+            message += "<li><b>地址: </b>" + document.form.address.value + "</li>";
+            message += "<li><b>手机号: </b>" + document.form.phone.value + "</li></ul>";
+            DispWin.document.write(message);
+        }
+
+        // 提交按钮状态
+        window.onload = function () {
+            var register = document.getElementById('bt');
+            register.addEventListener('mouseover',function(){
+                this.style.backgroundColor = "deeppink";
+            },false);
+            register.addEventListener('mouseout',function(){
+                this.style.backgroundColor = "aqua";
+            },false);
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--左侧导航条-->
+    <div class="wrap">
+        <div class="header">国内各个景点</div>
+        <div class="nav">
+            <ul>
+                <li class="list">
+                    <h2><i></i>北京景点</h2>
+                    <div class="hide">
+                        <h5>故宫</h5>
+                        <h5>圆明园</h5>
+                        <h5>天坛</h5>
+                        <h5>长城</h5>
+                        <h5>天安门</h5>
+                        <h5>雍和宫</h5>
+                    </div>
+                </li>
+                <li class="list">
+                    <h2><i></i>南京景点</h2>
+                    <div class="hide">
+                        <h5>夫子庙</h5>
+                        <h5>南京总统府</h5>
+                        <h5>明孝陵</h5>
+                        <h5>长江大桥</h5>
+                        <h5>南京博物院</h5>
+                        <h5>雨花台</h5>
+                    </div>
+                </li>
+                <li class="list">
+                    <h2><i></i>西安景点</h2>
+                    <div class="hide">
+                        <h5>钟楼</h5>
+                        <h5>秦皇陵</h5>
+                        <h5>华清池</h5>
+                        <h5>大唐芙蓉园</h5>
+                        <h5>秦岭野生动物园</h5>
+                        <h5>樱花广场</h5>
+                    </div>
+                </li>
+                <li class="list">
+                    <h2><i></i>重庆景点</h2>
+                    <div class="hide">
+                        <h5>洪崖洞</h5>
+                        <h5>丰都鬼城</h5>
+                        <h5>金刀峡</h5>
+                        <h5>重庆仙女山</h5>
+                        <h5>白公馆</h5>
+                        <h5>三峡博物馆</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--右侧表单-->
+    <div class="fm">
+        <h1>平台会员注册</h1>
+        <form name="form">
+            <p><b>&nbsp;昵&nbsp;&nbsp;称&nbsp;:</b> <input type="text" name="yourname" value="leom"></p>
+            <p><b>&nbsp;密&nbsp;&nbsp;码&nbsp;:</b> <input type="password" name="yourpassword" value="1234567890"></p>
+            <p><b>邮箱地址:</b> <input type="email" name="address" value="leom.lin@qq.com"></p>
+            <p><b>&nbsp;手&nbsp;机&nbsp;号: </b> <input type="tel" name="phone" value="18718456668"></p>
+            <p><input type="button" id="bt" value="注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册" onClick="display();"></p>
+        </form>
+        <a href="page02.html">跳转到分页面2</a>
+    </div>
+
+    <script>
+        // 表单下拉选项
+        (function () {
+            var oList = document.querySelectorAll('.list h2'),
+                oHide = document.querySelectorAll('.hide'),
+                oIcon = document.querySelectorAll('.list i'),
+                lastIndex = 0;
+            for (var i = 0; i < oList.length; i++) {
+                oList[i].index = i;
+                oList[i].isClick = false;
+                oList[i].initHeight = oHide[i].clientHeight;
+                oHide[i].style.height = '0';
+                oList[i].onclick = function () {
+                    if (this.isClick) {
+                        oHide[this.index].style.height = '0';
+                        oIcon[this.index].className = '';
+                        oList[this.index].className = '';
+                        oList[this.index].isClick = false;
+                    } else {
+                        oHide[lastIndex].style.height = '0';
+                        oIcon[lastIndex].className = '';
+                        oList[lastIndex].className = '';
+                        oHide[this.index].style.height = '220px';
+                        oIcon[this.index].className = 'on';
+                        oList[this.index].className = 'on';
+                        oList[lastIndex].isClick = false;
+                        oList[this.index].isClick = true;
+                        lastIndex = this.index;
+                    }
+                }
+            }
+        })();
+    </script>
+
+</body>
+</html>
